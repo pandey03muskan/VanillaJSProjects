@@ -1,0 +1,48 @@
+body{
+    margin:0px;
+    padding:0px;
+    background: rgb(236, 186, 193);
+    height:100vh;
+}
+.outerContainer{
+    background: blueviolet;
+    width:35%;
+    margin:3rem auto;
+    border-radius: 9px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.container{
+    padding:1.5rem 1.5rem 1.5rem 1.5rem;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    color:white;
+}
+.container i{
+    font-size: 20px;
+    font-weight: bold;
+}
+.lstAdd{
+    padding:0rem 1.4rem 1.5rem 1.4rem;
+    color:white;
+    transition: all 2s linear;
+}
+.btn::before{
+    content: '+';
+    font-size: 30px;
+    font-weight: bold;
+}
+.active::before{
+    content:'_';
+    font-size: 30px;
+}
+#HeadingSection{
+    height:100px;
+    width:70%;
+    margin:auto;
+    font-family: "Pacifico", cursive;
+    text-align: center;
+    padding-top:2rem 0rem;
+    color: blueviolet;
+    font-size: 22px;
+}

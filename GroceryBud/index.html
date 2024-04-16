@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Bud</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+    <style>
+        ul{
+            list-style: none;
+        }
+        .outerContainer{
+            min-height:100px;
+            width:50%;
+            margin:auto;
+            padding:4rem;
+            max-width: 650px;
+            background: #d681da;
+        }
+        .remove{
+            display:none;
+        }
+    </style>
+</head>
+<body>
+    <div class="outerContainer">
+        <h2>Grocery Bud</h2>
+        <input type="text" id="input"/><button id="btn">Submit</button>
+        <ul id="list"></ul>
+    </div>
+    <script>
+        btn=document.getElementById('btn');
+        li=document.getElementById('list');
+        btn.addEventListener("click",function(){
+            val=document.getElementById('input').value;
+            let newNode=document.createElement('li');
+            let newNode1=document.createElement('button');
+            // newNode1.classList.add('icon');
+            let text=document.createTextNode(`${val}`);
+            // text+='<i class="fa fa-trash-o" aria-hidden="true"></i>';
+            let text1=document.createTextNode("delete");
+            newNode.appendChild(text);
+            newNode1.appendChild(text1);
+            li.appendChild(newNode);
+            li.appendChild(newNode1);
+            document.getElementById('input').value='';
+        });
+        bt=document.querySelectorAll("#list button");
+        for (let i=0;i<bt.length;i++){
+            bt[i].addEventListener('click',function(){
+                
+            });
+        }
+    </script>
+</body>
+</html>

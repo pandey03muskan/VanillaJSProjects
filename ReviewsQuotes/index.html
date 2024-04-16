@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+
+        #reviewOuter{
+            min-height:300px;
+            background:white;
+            width:80vw;
+            max-width: 620px;
+            margin:3rem auto;
+            padding:2rem 1.5rem;
+            border-radius: 9px;
+            box-shadow:0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        #photoFrame{
+            position:relative;
+            height:150px;
+            width:150px;
+            border-radius: 50%;
+            background:rgb(117, 188, 213);
+            display: flex;
+            justify-content: center;
+            margin:auto;
+            margin-bottom:1.5rem;
+        }
+        #photoFrame img{
+            height:100%;
+            width:150px;
+            border-radius: 50%;
+            object-fit: cover;
+            position:relative;
+        }
+        #photoFrame::before{
+             content:'';
+             height:100%;
+             width:100%;
+             background:rgb(79, 202, 246);
+             position:absolute;
+             top: -0.25rem;
+             right: -0.5rem;
+             border-radius: 50%;
+        }
+        #photoFrame::after{
+              background:rgb(79, 202, 246);
+              position:absolute;
+              font-weight: 900;
+              font-family: "Font Awesome 5 Free";
+              transform: translateY(25%);
+              content: "\f10e";
+              top:0;
+              left:0;
+              height:2.5rem;
+              width:2.5rem;
+              border-radius: 50%;
+              display: grid;
+              color:white;
+              place-items: center;
+        } 
+        #IntroSection{
+            width:50%;
+            margin:auto;
+            text-align: center;
+            padding:1.1rem 0rem .5rem 0rem;
+        }
+        #IntroSection #name{
+            font-size: 18px;
+            color:rgb(87, 86, 86);
+            font-weight:bold;
+        }
+        #IntroSection #role{
+        color:rgb(136, 199, 222);
+        }
+        #desc{
+            width:90%;
+            margin:auto;
+            color:rgb(150, 154, 155);
+            word-spacing: .2rem;
+        }
+        #btn{
+            width:40%;
+            margin:auto;
+            font-size: 25px;
+            display: flex;
+            justify-content: space-evenly;
+            color:rgb(136, 199, 222);
+        }
+        body{
+            background:hsl(210, 36%, 96%);
+        }
+        .headingSection{
+            text-align: center;
+            padding:1rem;
+            font-family: "Noto Sans HK", sans-serif;
+            color:rgb(96, 94, 94);
+        }
+    </style>
+</head>
+<body>
+    <div class="headingSection">
+        <h1> Our Reviews</h1>
+    </div>
+    <div id="reviewOuter">
+        <div id="photoFrame">
+            <img src="mukku.jpeg"/>
+        </div>
+        <div id="IntroSection">
+            <span id="name">Muskan Pandey</span><br>
+            <span id="role">INTERN</span>
+        </div>
+        <div id="desc">
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                Nostrum, tempore! Vero vel illo odit suscipit cumque, recusandae,
+                 doloremque cum quia error laborum, repellendus labore placeat voluptates. 
+                 Amet debitis vitae suscipit.
+            </p>
+        </div>
+        <div id="btn">
+            <div>
+            <i class="fa-solid fa-angle-left" id="b1" onclick="backwardReview()"></i>
+            </div>
+            <div>
+            <i class="fa-solid fa-angle-right" id="b2" onclick="forwardReview()"></i>
+            </div>
+        </div>
+    </div>
+    <script>
+        details=[
+            {
+                'img':'mukku.jpeg',
+                'name':'Muskan Pandey',
+                'role':'INTERN',
+                'review':`Lorem ipsum dolor, sit amet consectetur adipisicing
+                 elit. Obcaecati ullam ut sit id temporibus 
+                 nulla consectetur eius ad reprehenderit voluptas
+                  dolores ipsum explicabo sapiente, voluptates 
+                  eos inventore quod iusto accusantium?`
+            },
+            {
+                'img':'khushba.png',
+                'name':'Khushbu Yadav',
+                'role':'WEB DEVELOPER',
+                'review':`khushbuqa ipsum dolor, sit amet consectetur adipisicing
+                 elit. Obcaecati ullam ut sit id temporibus 
+                 nulla consectetur eius ad reprehenderit voluptas
+                  dolores ipsum explicabo sapiente, voluptates 
+                  eos inventore quod iusto accusantium?`
+            },
+            {
+                'img':'g2.jpg',
+                'name':'Priti Singh',
+                'role':'APP DEVELOPER',
+                'review':`Priti ipsum dolor, sit amet consectetur adipisicing
+                 elit. Obcaecati ullam ut sit id temporibus 
+                 nulla consectetur eius ad reprehenderit voluptas
+                  dolores ipsum explicabo sapiente, voluptates 
+                  eos inventore quod iusto accusantium?`
+            },
+            {
+                'img':'g1.jpg',
+                'name':'Muskan Srivastva',
+                'role':'THE BOSS',
+                'review':`Muskan ipsum dolor, sit amet consectetur adipisicing
+                 elit. Obcaecati ullam ut sit id temporibus 
+                 nulla consectetur eius ad reprehenderit voluptas
+                  dolores ipsum explicabo sapiente, voluptates 
+                  eos inventore quod iusto accusantium?`
+            }
+        ]
+        var k=0; 
+       function forwardReview(){
+                if(k<details.length){
+                  document.querySelector("#photoFrame img").setAttribute('src',`${details[k]["img"]}`);
+                  document.querySelector("#IntroSection #name").innerHTML=`${details[k]["name"]}`;
+                  document.querySelector("#IntroSection #role").innerHTML=`${details[k]["role"]}`;
+                  document.querySelector("#desc p").innerHTML=`${details[k]["review"]}`;
+                  if(k<(details.length)-1){
+                    k+=1;
+                  }
+                  else{
+                    k=0;
+                  }
+                }
+       }
+       function backwardReview(){
+                if(k>=0){
+                   document.querySelector("#photoFrame img").setAttribute('src',`${details[k]["img"]}`);
+                   document.querySelector("#IntroSection #name").innerHTML=`${details[k]["name"]}`;
+                   document.querySelector("#IntroSection #role").innerHTML=`${details[k]["role"]}`;
+                   document.querySelector("#desc p").innerHTML=`${details[k]["review"]}`;
+                   if(k>0){
+                      k-=1;
+                   }
+                   else{
+                    k=details.length-1;
+                   }
+                   console.log(k);
+                }
+       }
+    </script>
+</body>
+</html>

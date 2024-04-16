@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="input"/>
+        <button id="btn">Get Decimal</button>
+        <h4 id="out"></h4>
+        <input type="text" id="input1"/>
+        <button id="btn1">Get Binary</button>
+        <h4 id="out1"></h4>
+    </form>
+    <script>
+        function BinaryToDecimal(val){
+                let power=1;
+                let dnum=0;
+                if(isNaN(val)){
+                    return "Please Enter 0 or 1 only!!";
+                }
+                else{
+                while(val>0){
+                    let rem=val%10;
+                  if(rem==1 || rem==0){
+                    dnum=dnum+(rem*power)
+                    power*=2;
+                    val=Math.floor(val/10);
+                  }
+                  else{
+                     return "Please Enter Binary number only!!";
+                  }
+                }
+            }
+                return dnum;
+        }
+        function DecimalToBinary(val){
+            let bnum='';
+            if(isNaN(val)){
+                    return "Please Enter numbers only!!";
+                }
+            else{
+            while(val>0){
+                parity=val%2;
+                bnum=`${parity}`+bnum;
+                val=Math.floor(val/2);
+            }
+        }
+            return bnum;
+        }
+        btn=document.getElementById("btn");
+        btn.addEventListener("click", function(event) {
+            val=document.getElementById("input").value;
+            document.getElementById("out").innerHTML =BinaryToDecimal(val);
+            event.preventDefault();
+        });
+        btn=document.getElementById("btn1");
+        btn.addEventListener("click", function(event) {
+            val=document.getElementById("input1").value;
+            document.getElementById("out1").innerHTML =DecimalToBinary(val);
+            event.preventDefault();
+        });
+
+    </script>
+</body>
+</html>

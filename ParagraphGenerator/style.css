@@ -1,0 +1,45 @@
+.container{
+    width:70%;
+    margin:5rem auto;
+    padding-left:2rem;
+}
+.param{
+    padding:3rem;
+    background: rgb(209, 225, 228);
+    color:rgb(142, 139, 139);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    list-style: none;
+}
+ul{
+    list-style-type:none;
+}
+#gen{
+    margin-left:2rem;
+    border-radius: 9px;
+    background:rgb(61, 198, 213);
+    /* height:2rem; */
+    padding:.5rem 1.5rem .5rem 1.5rem;
+    border:2px solid rgb(61, 198, 213);
+    transition:all 0.3s linear;
+    color:azure;
+    font-size:16px;
+}
+#gen:hover{
+    background:rgb(153, 212, 218);
+    border:2px solid rgb(153, 212, 218);
+    transform:scale(1.01);
+    color:azure;
+}
+#num{
+    width:3.5rem;
+    height:2rem;
+    text-align: center;
+    font-size: 16px;
+}
+span{
+    font-size: 16px;
+}
+.upper{
+    width:40%;
+    margin:3rem auto 1rem auto;
+}

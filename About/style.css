@@ -1,0 +1,75 @@
+#AboutInnerContainer{
+    display: flex;
+    justify-content: space-evenly;
+    width:90vw;
+    margin:auto;
+}
+.imgSection{
+  height:300px;
+  width:38vw;
+  max-width: 650px;
+  background: red;
+  border-radius: 9px;
+  box-shadow: 2px 8px 7px grey;
+}
+.DescriptionSection{
+  min-height:300px;
+  width:38vw;
+  max-width: 650px;
+  background:rgb(243, 241, 241)smoke;
+  border-radius: 9px;
+  box-shadow: 2px 8px 7px grey;
+}
+#DescriptionSectionButtons{
+  display: flex;
+  justify-content:space-between;
+  width:38vw;
+  max-width: 650px;
+  border-radius: 9px 0px 0px 0px;
+}
+.btnD{
+  padding:1rem 0rem;
+  background: rgb(199, 206, 207);
+  margin-top:1px;
+  width:13vw;
+  max-width:199px;
+  border:none;
+  transition: all linear 1s; 
+}
+#Vission{
+  border-radius: 9px 0px 0px 0px;
+}
+#Goal{
+  border-radius: 0px 9px 0px 0px;
+}
+#InnerDescriptionSection{
+  margin-top:.5rem;
+}
+.desc{
+  padding:1rem 2rem 2rem 2rem;
+}
+.active{
+  background:white;
+}
+.btnD:hover{
+  background: rgb(221, 239, 245);
+}
+.headingSection{
+  text-align: center;
+  padding:4rem;
+  /* background: red; */
+}
+#mainHeading{
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+#mainBelow{
+  font-size: 18px;
+}
+img{
+  height:100%;
+  width:38vw;
+  max-width:650px;
+  border-radius: 9px;
+  object-fit:cover;
+}
